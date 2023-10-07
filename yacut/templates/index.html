@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}YaCut{% endblock title%}
+{% block content %}
+  <h3>Создайте короткую ссылку автоматически или предложите свой вариант</h3>
+  <div class="col-lg"></div>
+  <div class="col-lg-8 my-5">
+    <form method="POST" novalidate>
+        {{ form.csrf_token }}
+        {{ form.original_link(
+            class="form-control form-control-lg py-3 mb-3",
+            placeholder=form.original_link.label.text) }}
+        <p class="text-danger">
+        {% if form.original_link.errors %}
+            {% for error in form.original_link.errors %}
+            {{ error }}
+            {% endfor %}
+        {% endif %}
+        </p>
+        {{ form.custom_id(
+            class="form-control form-control-lg py-3 mb-3",
+            placeholder=form.custom_id.label.text) }}
+        <p class="text-danger">
+        {% if form.custom_id.errors %}
+            {% for error in form.custom_id.errors %}
+            {{ error }}
+            {% endfor %}
+        {% endif %}
+        {% for message in get_flashed_messages(category_filter=("already_exists",)) %}
+          {{ message }}
+        {% endfor %}
+        </p>
+        {{ form.submit(class="button px-5 py-3 btn") }}
+    </form>
+    <div class="my-5">
+      <center>
+        {% with messages = get_flashed_messages(category_filter=("success",)) %}
+          {% if messages %}
+            <h4>Ваша новая ссылка готова:<h4>
+            {% for message in messages %}
+              <a href="{{ message }}">{{ message }}</a>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </center>
+    </div>
+  </div>
+  <div class="col-lg"></div>
+{% endblock content %}
