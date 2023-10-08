@@ -1,79 +1,122 @@
-@font-face {
-    font-family: "Montserrat";
-    src: local("Montserrat"),
-      url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
-  }
+/* Основной Цвет: #13629E
+#285576
+#063D67
+#4693CF
+#6BA3CF
+Вторичный Цвет A:
+#2222AC
+#343481
+#0B0B70
+#5555D5
+#7878D5
+Вторичный Цвет B:
+#0AA864
+#257E58
+#036D40
+#3ED494
+#66D4A5 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500;700&display=swap');
+
 
 body {
-    font-family: Montserrat, Arial, sans-serif;
-    background-color: #F9F9F9;
+    font-family: Inter,Arial,Lucida Grande,sans-serif;
+    padding-top: 1rem;
+    color: #4b4f54;
+    font-size: 1.15vw;
+    font-weight: 200;
+}
+@media (max-width: 768px) {
+    body {
+      font-size: 1.5rem;
+    }
+    body small {
+        font-size: .5rem;
+      }
+      .nav {
+        display: block;
+    }
+  }
+main {
+    padding-top: 5em;
+}
+
+
+
+body p {
     line-height: 1.2;
-    letter-spacing: 0.01em;
-    color: #272727;
 }
-p, a {
-    font-size: 20px;
+.btn-primary {
+    color: #fff;
+    background-color: #13629E;
+    border-color: #13629E;
 }
-
-a.nav-link, a {
-    color: #272727;
-
-}
-
-a.nav-link:hover, a:hover {
-    color: #00D6D6;
-}
-.nav-pills a.nav-link.active {
-    background-color: #00D6D6;
-    border-radius: 20px;
+.btn-primary:hover {
+    color: #fff;
+    background-color: #063D67;
+    border-color: #13629E;
 }
 
-h1 {
-    font-size: 42px;
-}
 
-p.small {
-    font-size: 18px;
-    color: #8E8E8E;
-}
-.form-control-lg {
-    border-radius: 20px;
-
-}
-
-.form-control:focus {
-    background-color: #FFF;
-    border-color: #00D6D6;
-    outline: 0;
-    box-shadow: 0 0 0 2px rgb(0, 214, 214, 1);
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
   }
 
-textarea {
-    resize: none;
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+a.nav-link {
+    transition: opacity .3s ease,color .3s ease;
+    color: #063D67;
+    font-weight: 500;
+    /* font-size: 1.1vw; */
+    line-height: 1em;
+    text-transform: uppercase;
 }
 
-.button {
-    background-color: #3BBEBE;
-    border-radius: 20px;
-    color: #FFF;
-    font-size: 20px;
+a.nav-link:hover {
+    color: #13629E;
+    text-decoration: underline;
 }
 
-.button:hover {
-    background-color: #00D6D6;
-    color: #FFF;
+.main-subtitle { 
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+.main-subtitle strong{ 
+    color: #0AA864;
 }
 
+a.regular-link{
+    text-decoration: none;
+    transition: opacity .3s ease,color .3s ease;
+    color: #063D67;
+    font-weight: 700;
+}
 
+a.regular-link:hover {
+    color: #13629E;
+    text-decoration: underline;
+}
 
-@media (max-width: 600px) {
-    p {
-        text-align: justify;
-    }
-    h1 {
-        text-align: center;
-    }
-    .navbar-brand {
-        margin: 0 auto;
-    }
+.objects .card-header {
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: none;
+}
+
+.contacts ul {
+    list-style: none;
+    margin-left: -2rem;
+}
+
+footer a.regular-link {
+    font-weight: 200;
 }

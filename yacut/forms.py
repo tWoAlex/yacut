@@ -4,8 +4,8 @@ from wtforms.validators import DataRequired, Optional
 
 
 class YaCutForm(FlaskForm):
-    original_link = URLField(label='Введите ссылку, которую хотите сократить',
+    original_link = URLField(label='Длинная ссылка',
                              validators=(DataRequired(),))
-    custom_id = StringField(label='Желаемый короткий ID',
+    custom_id = StringField(label='Ваш вариант короткой ссылки',
                             validators=(Optional(),))
     submit = SubmitField(label='Создать')
