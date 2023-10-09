@@ -15,7 +15,7 @@ def get_unique_short_id():
 
 
 def short_is_correct(short: str) -> bool:
-    if type(short) is not str:
+    if not isinstance(short, str):
         return False
     if not (0 < len(short) <= SHORTLINKS_MAX_LENGTH):
         return False
